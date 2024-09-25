@@ -9,17 +9,21 @@
 	programs.hyprlock.enable = true;
 	security.pam.services.hyprlock = {};
 
+	# Greet
+	services.greetd = {
+	  enable = true;
+	  settings.default_session = {
+	    command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --asterisks --cmd Hyprland";
+	  };
+	};
+
+	# Keyring
+	services.gnome.gnome-keyring.enable = true;
+	security.pam.services.greetd.enableGnomeKeyring = true;
+
 	xdg.portal.enable = true;
 	xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
-	# Greet
-	services.greetd = {
-    		enable = true;
-    		vt = 2;
-    		settings.default_session = {
-	        	command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --asterisks --cmd Hyprland";
-    		};
-  	};
 
 	# Steam
 	programs.steam = {
@@ -32,6 +36,9 @@
 	environment.systemPackages = [
 		# Elkowar's Wacky Widgets
 		pkgs.eww
+
+		# Zathura
+		pkgs.zathura
 
 		# Notification Daemon
 		pkgs.dunst
@@ -50,11 +57,14 @@
 		pkgs.slurp
 		pkgs.grim
 
+		# File Explorer
+		pkgs.gnome.nautilus
+
 		# Image Editor
 		pkgs.gimp
 
 		# Terminal
-		pkgs.kitty
+		pkgs.alacritty
 
 		# Password Manager
 		pkgs.keepassxc
@@ -66,6 +76,9 @@
 		pkgs.texliveFull
 		pkgs.pandoc
 		pkgs.jq
+
+		# LanguageTool
+		pkgs.languagetool
 
 		# Ausweis App
 		pkgs.ausweisapp
@@ -84,6 +97,7 @@
 		pkgs.discord
 		pkgs.webcord
 		pkgs.xwaylandvideobridge # to make screen shares be less of a pain in the ass
+		pkgs.element-desktop
 
 		# LibreOffice
 		pkgs.libreoffice

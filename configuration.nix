@@ -31,6 +31,11 @@
 
   # Printing
   services.printing.enable = true;
+  services.avahi = { # auto-discovery
+    enable = true;
+    nssmdns4 = true;
+    openFirewall = true;
+  };
 
   # USB Stuff
   boot.supportedFilesystems = [ "ntfs" "fat32" ];
@@ -87,17 +92,14 @@
   nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile. To search, run:
-  # $ nix search wget
   environment.systemPackages = with pkgs; [
    vim
    wget
    git
    neofetch
    home-manager
+   hplip # HP Driver Stuff
   ];
-
-
-  # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
