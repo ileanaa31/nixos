@@ -5,7 +5,6 @@
     [
       ./hardware-configuration.nix
       ./hyprland.nix
-      ./stylix.nix
     ];
 
   # Bootloader.

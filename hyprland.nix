@@ -35,6 +35,9 @@
   		localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
 	};
 
+	# stylix
+	stylix.enable = true;
+
 	environment.systemPackages = [
 		# Elkowar's Wacky Widgets
 		pkgs.eww
