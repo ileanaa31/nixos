@@ -12,7 +12,9 @@
 	# Greet
 	services.greetd = {
 	  enable = true;
+
 	  settings.default_session = {
+	    vt = 3;
 	    command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --asterisks --cmd Hyprland";
 	  };
 	};
@@ -32,7 +34,7 @@
   		dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
   		localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
 	};
-	
+
 	environment.systemPackages = [
 		# Elkowar's Wacky Widgets
 		pkgs.eww

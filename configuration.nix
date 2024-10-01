@@ -5,6 +5,7 @@
     [
       ./hardware-configuration.nix
       ./hyprland.nix
+      ./stylix.nix
     ];
 
   # Bootloader.
@@ -38,7 +39,7 @@
   };
 
   # USB Stuff
-  boot.supportedFilesystems = [ "ntfs" "fat32" ];
+  boot.supportedFilesystems = [ "ntfs" "fat32" "exfat" ];
   services.gvfs.enable = true;
   services.udisks2.enable = true;
 
@@ -48,6 +49,9 @@
 
   # Docker
   virtualisation.docker.enable = true;
+
+  # annoying stuff with nix
+  programs.nix-ld.enable = true;
 
   # Bluetooth
   services.blueman.enable = true;
