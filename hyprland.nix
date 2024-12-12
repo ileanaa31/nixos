@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
 	programs.hyprland = {
@@ -35,13 +35,7 @@
   		localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
 	};
 
-	# stylix
-	stylix.enable = true;
-
 	environment.systemPackages = [
-		# Elkowar's Wacky Widgets
-		pkgs.eww
-
 		# Zathura
 		pkgs.zathura
 
@@ -52,9 +46,6 @@
 		# Network Manager GUI
 		pkgs.networkmanagerapplet
 
-		# Wallpaper Engine
-		pkgs.swww
-
 		# Clipboard
 		pkgs.wl-clipboard
 
@@ -63,7 +54,7 @@
 		pkgs.grim
 
 		# File Explorer
-		pkgs.gnome.nautilus
+		pkgs.nautilus
 
 		# Image Editor
 		pkgs.gimp
@@ -87,6 +78,9 @@
 
 		# Ausweis App
 		pkgs.ausweisapp
+
+		# BibTex
+		pkgs.jabref
 		
 		# Music
 		pkgs.spotify
@@ -119,12 +113,16 @@
 		# VPN
 		pkgs.eduvpn-client
 
+		# Thunderbird Mail Client
+		pkgs.thunderbird
+		
 		# Processing -- for the arts babeyyyyyy
     		pkgs.processing
 	];
 
 	fonts.packages = with pkgs; [
 		ubuntu_font_family
+		liberation_ttf
 		(nerdfonts.override { fonts = [ "FiraCode" ]; })
 	];
 }

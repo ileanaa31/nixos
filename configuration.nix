@@ -14,12 +14,12 @@
   boot.initrd.luks.devices."luks-efae76f9-a9ee-4ffc-a776-d4c2f487b803".device = "/dev/disk/by-uuid/efae76f9-a9ee-4ffc-a776-d4c2f487b803";
   
   # Graphics
-  hardware.opengl.enable = true;
+  hardware.graphics.enable = true;
   boot.initrd.kernelModules = [ "amdgpu" ];
   services.xserver.videoDrivers = [ "amdgpu" ];
 
   # Enable sound with pipewire
-  sound.enable = true;
+  # sound.enable = true;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -35,6 +35,11 @@
     enable = true;
     nssmdns4 = true;
     openFirewall = true;
+  };
+
+  # Scanner
+  hardware.sane = {
+    enable = true;
   };
 
   # USB Stuff
@@ -87,8 +92,7 @@
   users.users.anton = {
     isNormalUser = true;
     description = "Anton";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
-    packages = with pkgs; [];
+    extraGroups = [ "networkmanager" "wheel" "docker" "scanner" "lp" ];
   };
 
   # Allow unfree packages
@@ -113,6 +117,6 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "24.05"; # Did you read the comment?
+  system.stateVersion = "24.11"; # Did you read the comment?
 
 }

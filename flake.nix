@@ -2,8 +2,7 @@
 	description = "The Flake to rule them all";
 
 	inputs = {
-		nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
-		stylix.url = "github:danth/stylix/release-24.05";
+		nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
 	};
 
 	outputs = { nixpkgs, ... }@inputs: {
@@ -12,7 +11,6 @@
 			system = "x86_64-linux";
 			modules = [
 				./configuration.nix
-				inputs.stylix.nixosModules.stylix
 			];
 		};
 	};
