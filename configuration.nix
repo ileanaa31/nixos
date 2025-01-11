@@ -102,6 +102,7 @@
   environment.systemPackages = with pkgs; [
    vim
    wget
+   unzip
    git
    neofetch
    home-manager
