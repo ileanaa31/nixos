@@ -36,6 +36,9 @@
 	};
 
 	environment.systemPackages = [
+		# Minecraft :3
+		pkgs.prismlauncher
+
 		# Zathura
 		pkgs.zathura
 
