@@ -31,6 +31,10 @@
 
   # Printing
   services.printing.enable = true;
+  services.printing.drivers = with pkgs; [
+    hplip
+    brlaser
+  ];
   services.avahi = { # auto-discovery
     enable = true;
     nssmdns4 = true;

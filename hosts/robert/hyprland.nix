@@ -61,6 +61,8 @@
 
 		# Image Editor
 		pkgs.gimp
+		pkgs.imagemagick
+		pkgs.pdf2svg
 
 		# Terminal
 		pkgs.alacritty
@@ -99,7 +101,7 @@
 		pkgs.discord
 		pkgs.webcord
 		pkgs.xwaylandvideobridge # to make screen shares be less of a pain in the ass
-		pkgs.element-desktop
+		pkgs.mattermost
 
 		# LibreOffice
 		pkgs.libreoffice
