@@ -57,7 +57,7 @@
   networking.hostName = "robert"; # Define your hostname.
 
   # Docker
-  virtualisation.docker.enable = true;
+  # virtualisation.docker.enable = true;
 
   # annoying stuff with nix
   programs.nix-ld.enable = true;
