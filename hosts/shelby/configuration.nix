@@ -1,12 +1,23 @@
-{ ... }:
-
+{ pkgs, ... }:
 {
-  system.stateVersion = "25.05";
-  wsl = {
-   enable = true;
-   defaultUser = "anton";
-   wslConf.network.hostname = "shelby";
-  };
+  imports = [
+    ../generic/configuration.nix
+  ];
 
-  networking.hostName = "shelby"; # Define your hostname.
+  environment.systemPackages = with pkgs; [
+    git
+    vim
+    home-manager
+  ];
+
+  wsl = {
+    enable = true;
+    defaultUser = "anton";
+    startMenuLaunchers = true;
+
+    wslConf = {
+      network.hostname = "shelby";
+      user.default = "anton";
+    };
+  };
 }
