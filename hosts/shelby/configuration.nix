@@ -10,20 +10,14 @@
     home-manager
   ];
 
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
-
   wsl = {
     enable = true;
     defaultUser = "anton";
+    startMenuLaunchers = true;
 
     wslConf = {
       network.hostname = "shelby";
       user.default = "anton";
     };
   };
-
-  system.stateVersion = "24.05";
 }
