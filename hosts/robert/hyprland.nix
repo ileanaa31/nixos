@@ -1,133 +1,122 @@
 { pkgs, ... }:
 
 {
-	programs.hyprland = {
-		enable = true;
-		xwayland.enable = true;
-	};
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+  };
 
-	programs.hyprlock.enable = true;
-	security.pam.services.hyprlock = {};
+  programs.hyprlock.enable = true;
+  security.pam.services.hyprlock = { };
 
-	# Greet
-	services.greetd = {
-	  enable = true;
+  # Greet
+  services.greetd = {
+    enable = true;
 
-	  settings.default_session = {
-	    vt = 3;
-	    command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --asterisks --cmd Hyprland";
-	  };
-	};
+    settings.default_session = {
+      vt = 3;
+      command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --asterisks --cmd Hyprland";
+    };
+  };
 
-	# Keyring
-	services.gnome.gnome-keyring.enable = true;
-	security.pam.services.greetd.enableGnomeKeyring = true;
+  # Keyring
+  services.gnome.gnome-keyring.enable = true;
+  security.pam.services.greetd.enableGnomeKeyring = true;
 
-	xdg.portal.enable = true;
-	xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  xdg.portal.enable = true;
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
+  # Steam
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+    localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
+  };
 
-	# Steam
-	programs.steam = {
-  		enable = true;
-  		remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-  		dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
-  		localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
-	};
+  environment.systemPackages = [
+    # Minecraft :3
+    pkgs.prismlauncher
 
-	environment.systemPackages = [
-		# Minecraft :3
-		pkgs.prismlauncher
+    # Zathura
+    pkgs.zathura
 
-		# Zathura
-		pkgs.zathura
+    # Notification Daemon
+    pkgs.dunst
+    pkgs.libnotify
 
-		# Notification Daemon
-		pkgs.dunst
-		pkgs.libnotify
+    # Network Manager GUI
+    pkgs.networkmanagerapplet
 
-		# Network Manager GUI
-		pkgs.networkmanagerapplet
+    # Clipboard
+    pkgs.wl-clipboard
 
-		# Clipboard
-		pkgs.wl-clipboard
+    # Screenshot
+    pkgs.slurp
+    pkgs.grim
 
-		# Screenshot
-		pkgs.slurp
-		pkgs.grim
+    # File Explorer
+    pkgs.nautilus
 
-		# File Explorer
-		pkgs.nautilus
+    # Image Editor
+    pkgs.gimp
+    pkgs.imagemagick
+    pkgs.pdf2svg
 
-		# Image Editor
-		pkgs.gimp
-		pkgs.imagemagick
-		pkgs.pdf2svg
+    # Terminal
+    pkgs.alacritty
 
-		# Terminal
-		pkgs.alacritty
+    # Password Manager
+    pkgs.keepassxc
 
-		# Password Manager
-		pkgs.keepassxc
+    # Browser
+    pkgs.firefox
 
-		# Browser
-		pkgs.firefox
+    # Pretty Proto
+    pkgs.texliveFull
+    pkgs.pandoc
+    pkgs.jq
 
-		# Pretty Proto
-		pkgs.texliveFull
-		pkgs.pandoc
-		pkgs.jq
+    # LanguageTool
+    pkgs.languagetool
 
-		# LanguageTool
-		pkgs.languagetool
+    # Ausweis App
+    pkgs.ausweisapp
 
-		# Ausweis App
-		pkgs.ausweisapp
+    # BibTex
+    pkgs.jabref
 
-		# BibTex
-		pkgs.jabref
-		
-		# Music
-		pkgs.spotify
-		pkgs.playerctl
+    # Music
+    pkgs.spotify
+    pkgs.playerctl
 
-		# Photography
-		pkgs.rawtherapee
+    # Photography
+    pkgs.rawtherapee
 
-		# Videography
-		pkgs.shotcut
+    # Videography
+    pkgs.shotcut
 
-		# Chat
-		pkgs.discord
-		pkgs.webcord
-		pkgs.xwaylandvideobridge # to make screen shares be less of a pain in the ass
-		pkgs.mattermost
+    # Chat
+    pkgs.discord
+    pkgs.xwaylandvideobridge # to make screen shares be less of a pain in the ass
+    pkgs.mattermost
 
-		# LibreOffice
-		pkgs.libreoffice
-		
-		# Code
-		pkgs.vscode
+    # LibreOffice
+    pkgs.libreoffice
 
-		# Note Taking
-		pkgs.obsidian
+    # Code
+    pkgs.vscode
 
-		# Nextcloud
-		pkgs.nextcloud-client
+    # Note Taking
+    pkgs.obsidian
 
-		# VPN
-		pkgs.eduvpn-client
+    # Nextcloud
+    pkgs.nextcloud-client
 
-		# Thunderbird Mail Client
-		pkgs.thunderbird
-		
-		# Processing -- for the arts babeyyyyyy
-    		pkgs.processing
-	];
+    # VPN
+    pkgs.eduvpn-client
 
-	fonts.packages = with pkgs; [
-		ubuntu_font_family
-		liberation_ttf
-		(nerdfonts.override { fonts = [ "FiraCode" ]; })
-	];
+    # Thunderbird Mail Client
+    pkgs.thunderbird
+  ];
 }

@@ -44,6 +44,13 @@
     home-manager
   ];
 
+  # Additional fonts
+  fonts.packages = with pkgs; [
+    ubuntu_font_family
+    liberation_ttf
+    (nerdfonts.override { fonts = [ "FiraCode" ]; })
+  ];
+
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
