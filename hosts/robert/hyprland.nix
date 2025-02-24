@@ -99,7 +99,7 @@
     # Chat
     pkgs.discord
     pkgs.xwaylandvideobridge # to make screen shares be less of a pain in the ass
-    pkgs.mattermost
+    pkgs.mattermost-desktop
 
     # LibreOffice
     pkgs.libreoffice
