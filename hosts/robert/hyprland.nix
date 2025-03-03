@@ -13,8 +13,8 @@
   services.greetd = {
     enable = true;
 
+    vt = 2;
     settings.default_session = {
-      vt = 3;
       command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --asterisks --cmd Hyprland";
     };
   };
@@ -35,7 +35,7 @@
   };
 
   environment.systemPackages = [
-    # Minecraft :3
+    # Games
     pkgs.prismlauncher
 
     # Zathura
@@ -60,6 +60,7 @@
 
     # Image Editor
     pkgs.gimp
+    pkgs.inkscape
     pkgs.imagemagick
     pkgs.pdf2svg
 
@@ -71,6 +72,7 @@
 
     # Browser
     pkgs.firefox
+    pkgs.brave # because firefox is weird atm
 
     # Pretty Proto
     pkgs.texliveFull
@@ -106,6 +108,7 @@
 
     # Code
     pkgs.vscode
+    pkgs.processing
 
     # Note Taking
     pkgs.obsidian
