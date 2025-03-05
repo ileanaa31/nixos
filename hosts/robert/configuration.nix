@@ -1,4 +1,4 @@
-{ ... }:
+{ config, pkgs, ... }:
 
 {
   imports = [
@@ -73,7 +73,7 @@
     extraGroups = [
       "networkmanager"
       "wheel"
-      # "docker"
+      "docker"
       "scanner"
       "lp"
     ];
