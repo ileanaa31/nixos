@@ -91,5 +91,8 @@
 
     # Thunderbird Mail Client
     # pkgs.thunderbird
+
+    # PDF
+    pkgs.zathura
   ];
 }
