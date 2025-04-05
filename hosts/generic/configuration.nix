@@ -48,8 +48,7 @@
 
   # Additional fonts
   fonts.packages = with pkgs; [
-  #  ubuntu_font_family
-  #  liberation_ttf
+    ubuntu_font_family
     (nerdfonts.override { fonts = [ "FiraCode" ]; })
   ];
 
