@@ -35,12 +35,6 @@
   };
 
   environment.systemPackages = [
-    # Games
-    pkgs.prismlauncher
-
-    # Zathura
-    pkgs.zathura
-
     # Notification Daemon
     pkgs.dunst
     pkgs.libnotify
@@ -60,56 +54,32 @@
 
     # Image Editor
     pkgs.gimp
-    pkgs.inkscape
-    pkgs.imagemagick
-    pkgs.pdf2svg
-
+        
     # Terminal
     pkgs.alacritty
 
-    # Password Manager
-    pkgs.keepassxc
-
     # Browser
     pkgs.firefox
-    pkgs.brave # because firefox is weird atm
-
+    
     # Pretty Proto
     pkgs.texliveFull
     pkgs.pandoc
     pkgs.jq
 
-    # LanguageTool
-    pkgs.languagetool
-
-    # Ausweis App
-    pkgs.ausweisapp
-
-    # BibTex
-    pkgs.jabref
-
     # Music
     pkgs.spotify
     pkgs.playerctl
 
-    # Photography
-    pkgs.rawtherapee
-
-    # Videography
-    pkgs.shotcut
-
     # Chat
     pkgs.discord
     pkgs.xwaylandvideobridge # to make screen shares be less of a pain in the ass
-    pkgs.mattermost-desktop
-
+    
     # LibreOffice
     pkgs.libreoffice
 
     # Code
     pkgs.vscode
-    pkgs.processing
-
+    
     # Note Taking
     pkgs.obsidian
 
@@ -120,6 +90,6 @@
     pkgs.eduvpn-client
 
     # Thunderbird Mail Client
-    pkgs.thunderbird
+    # pkgs.thunderbird
   ];
 }

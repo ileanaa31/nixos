@@ -11,7 +11,7 @@
   time.timeZone = "Europe/Berlin";
 
   # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
+  i18n.defaultLocale = "en_GB.UTF-8";
 
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "de_DE.UTF-8";
@@ -27,10 +27,12 @@
 
   # Configure keymap in X11
   services.xserver.xkb = {
-    layout = "us";
-    variant = "altgr-intl";
+    layout = "de";
+    variant = "";
   };
 
+  # Configure console keymap
+  console.keyMap = "de";
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -46,8 +48,8 @@
 
   # Additional fonts
   fonts.packages = with pkgs; [
-    ubuntu_font_family
-    liberation_ttf
+  #  ubuntu_font_family
+  #  liberation_ttf
     (nerdfonts.override { fonts = [ "FiraCode" ]; })
   ];
 
