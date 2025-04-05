@@ -49,7 +49,10 @@
     pkgs.slurp
     pkgs.grim
 
-    # File Explorer
+    # GNOME
+    pkgs.adwaita-icon-theme
+
+    ## File Explorer
     pkgs.nautilus
 
     # Image Editor
