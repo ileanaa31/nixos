@@ -11,7 +11,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  boot.initrd.luks.devices."luks-efae76f9-a9ee-4ffc-a776-d4c2f487b803".device = "/dev/disk/by-uuid/efae76f9-a9ee-4ffc-a776-d4c2f487b803";
+  # boot.initrd.luks.devices."luks-efae76f9-a9ee-4ffc-a776-d4c2f487b803".device = "/dev/disk/by-uuid/efae76f9-a9ee-4ffc-a776-d4c2f487b803";
 
   # Graphics
   hardware.graphics.enable = true;
@@ -54,7 +54,7 @@
 
   # Networking
   networking.networkmanager.enable = true;
-  networking.hostName = "robert"; # Define your hostname.
+  networking.hostName = "poly"; # Define your hostname.
 
   # Docker
   virtualisation.docker.enable = true;
@@ -67,9 +67,9 @@
   hardware.bluetooth.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.anton = {
+  users.users.ilay = {
     isNormalUser = true;
-    description = "Anton";
+    description = "Ilay";
     extraGroups = [
       "networkmanager"
       "wheel"

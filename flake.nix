@@ -8,17 +8,17 @@
   outputs =
     { nixpkgs, ... }@inputs:
     {
-      nixosConfigurations.robert = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.poly = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
         system = "x86_64-linux";
         modules = [
-          ./hosts/robert/configuration.nix
+          ./hosts/poly/configuration.nix
         ];
       };
-      nixosConfigurations.shelby = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.wsl = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          ./hosts/shelby/configuration.nix
+          ./hosts/wsl/configuration.nix
         ];
       };
     };
