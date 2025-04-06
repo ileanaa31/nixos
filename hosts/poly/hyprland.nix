@@ -35,6 +35,7 @@
   };
 
   environment.systemPackages = [
+
     # Notification Daemon
     pkgs.dunst
     pkgs.libnotify
@@ -76,7 +77,8 @@
     # Chat
     pkgs.discord
     pkgs.xwaylandvideobridge # to make screen shares be less of a pain in the ass
-    
+    pkgs.signal-desktop
+
     # LibreOffice
     pkgs.libreoffice
 
