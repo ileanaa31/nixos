@@ -87,6 +87,7 @@
     
     # Note Taking
     pkgs.obsidian
+    pkgs.notepadqq
 
     # Nextcloud
     pkgs.nextcloud-client
