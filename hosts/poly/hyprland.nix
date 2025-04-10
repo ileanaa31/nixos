@@ -36,6 +36,12 @@
 
   environment.systemPackages = [
 
+    # Backlight Control
+    # pckg.brightnessctl
+
+    # Math
+    pkgs.geogebra
+
     # Notification Daemon
     pkgs.dunst
     pkgs.libnotify
