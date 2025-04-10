@@ -90,6 +90,7 @@
 
     # Code
     pkgs.vscode
+    pkgs.arduino-ide
     
     # Note Taking
     pkgs.obsidian
