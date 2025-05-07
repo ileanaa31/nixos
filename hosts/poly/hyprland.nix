@@ -1,5 +1,4 @@
 { pkgs, ... }:
-
 {
   programs.hyprland = {
     enable = true;
@@ -34,78 +33,100 @@
     localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
   };
 
+  # Java
+  programs.java = { enable = true; package = pkgs.jre8; };
+
+  services.udev.packages = [
+      #Arduino IDE 
+      pkgs.arduino
+
+      #PlatformIO
+      pkgs.platformio-core
+      pkgs.openocd
+  ];
   environment.systemPackages = [
 
+    # 3D-Printing
+    pkgs.prusa-slicer
+
+    # Arduino
+    pkgs.arduino-ide
+    pkgs.platformio
+
     # Backlight Control
-    # pckg.brightnessctl
-
-    # Math
-    pkgs.geogebra
-
-    # Notification Daemon
-    pkgs.dunst
-    pkgs.libnotify
-
-    # Network Manager GUI
-    pkgs.networkmanagerapplet
-
-    # Clipboard
-    pkgs.wl-clipboard
-
-    # Screenshot
-    pkgs.slurp
-    pkgs.grim
-
-    # GNOME
-    pkgs.adwaita-icon-theme
-
-    ## File Explorer
-    pkgs.nautilus
-
-    # Image Editor
-    pkgs.gimp
-        
-    # Terminal
-    pkgs.alacritty
+    pkgs.brightnessctl
 
     # Browser
     pkgs.firefox
-    
-    # Pretty Proto
-    pkgs.texliveFull
-    pkgs.pandoc
-    pkgs.jq
-
-    # Music
-    pkgs.spotify
-    pkgs.playerctl
 
     # Chat
     pkgs.discord
     pkgs.xwaylandvideobridge # to make screen shares be less of a pain in the ass
     pkgs.signal-desktop
 
-    # LibreOffice
-    pkgs.libreoffice
+    # Clipboard
+    pkgs.wl-clipboard
 
     # Code
     pkgs.vscode
     pkgs.arduino-ide
-    
-    # Note Taking
-    pkgs.obsidian
-    pkgs.notepadqq
+    pkgs.pgadmin4-desktopmode
+    pkgs.postgresql
+    pkgs.drawio
+
+    # File Explorer
+    pkgs.nautilus
+
+    # GNOME
+    pkgs.adwaita-icon-theme
+
+    # Image Editor
+    pkgs.gimp
+
+    # LibreOffice
+    pkgs.libreoffice
+
+    # Math
+    pkgs.geogebra
+
+    # Music
+    pkgs.spotify
+    pkgs.playerctl
+
+    # Network Manager GUI
+    pkgs.networkmanagerapplet
 
     # Nextcloud
     pkgs.nextcloud-client
 
-    # VPN
-    pkgs.eduvpn-client
+    # Note Taking
+    pkgs.obsidian
+    pkgs.notepadqq
 
-    # Thunderbird Mail Client
-    # pkgs.thunderbird
+    # Notification Daemon
+    pkgs.dunst
+    pkgs.libnotify
 
     # PDF
     pkgs.zathura
+    pkgs.xournalpp
+    
+    # Pretty Proto
+    pkgs.texliveFull
+    pkgs.pandoc
+    pkgs.jq
+
+    # Screenshot
+    pkgs.slurp
+    pkgs.grim
+
+    # Terminal
+    pkgs.alacritty
+
+    # Thunderbird Mail Client
+    pkgs.thunderbird
+
+    # VPN
+    pkgs.eduvpn-client
   ];
 }
