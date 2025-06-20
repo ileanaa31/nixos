@@ -3,6 +3,7 @@
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
+
   };
 
   programs.hyprlock.enable = true;
@@ -34,16 +35,20 @@
   };
 
   # Java
-  programs.java = { enable = true; package = pkgs.jre8; };
+  programs.java = {
+    enable = true;
+    package = pkgs.jdk8;
+  };
 
   services.udev.packages = [
-      #Arduino IDE 
-      pkgs.arduino
+    #Arduino IDE
+    pkgs.arduino
 
-      #PlatformIO
-      pkgs.platformio-core
-      pkgs.openocd
+    #PlatformIO
+    pkgs.platformio-core
+    pkgs.openocd
   ];
+
   environment.systemPackages = [
 
     # 3D-Printing
@@ -61,8 +66,9 @@
 
     # Chat
     pkgs.discord
-    pkgs.xwaylandvideobridge # to make screen shares be less of a pain in the ass
+    pkgs.kdePackages.xwaylandvideobridge # to make screen shares be less of a pain in the ass
     pkgs.signal-desktop
+    pkgs.element-desktop
 
     # Clipboard
     pkgs.wl-clipboard
@@ -73,6 +79,9 @@
     pkgs.pgadmin4-desktopmode
     pkgs.postgresql
     pkgs.drawio
+
+    # Driver
+    pkgs.amdvlk
 
     # File Explorer
     pkgs.nautilus
@@ -102,6 +111,7 @@
     # Note Taking
     pkgs.obsidian
     pkgs.notepadqq
+    pkgs.anki
 
     # Notification Daemon
     pkgs.dunst
@@ -109,12 +119,14 @@
 
     # PDF
     pkgs.zathura
-    pkgs.xournalpp
-    
+
     # Pretty Proto
     pkgs.texliveFull
     pkgs.pandoc
     pkgs.jq
+
+    # Screen
+    pkgs.hyprsunset
 
     # Screenshot
     pkgs.slurp
