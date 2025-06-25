@@ -49,7 +49,9 @@
   # Additional fonts
   fonts.packages = with pkgs; [
     ubuntu_font_family
-    nerdfonts.fira-code
+    nerd-fonts.fira-code
+    nerd-fonts._0xproto
+    nerd-fonts.droid-sans-mono
   ];
 
   # Enable the OpenSSH daemon.
@@ -57,6 +59,9 @@
 
   # [Background](https://www.codyhiar.com/blog/how-to-set-desktop-wallpaper-on-nixos/)
   services.xserver.enable=true; 
+
+  # [USB-Stick-Managing](https://wiki.nixos.org/wiki/USB_storage_devices)
+  services.udisks2.enable = true;
 
 
   # This value determines the NixOS release from which the default
