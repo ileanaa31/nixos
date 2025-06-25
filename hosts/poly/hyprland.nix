@@ -88,6 +88,7 @@
 
     # GNOME
     pkgs.adwaita-icon-theme
+    pkgs.gnome-disk-utility
 
     # Image Editor
     pkgs.gimp
