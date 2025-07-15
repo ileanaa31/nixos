@@ -92,7 +92,7 @@
 
     # Image Editor
     pkgs.gimp
-    pkgs.loupe
+    pkgs.gthumb
 
     # LibreOffice
     pkgs.libreoffice
