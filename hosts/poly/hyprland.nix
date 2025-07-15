@@ -92,6 +92,7 @@
 
     # Image Editor
     pkgs.gimp
+    pkgs.loupe
 
     # LibreOffice
     pkgs.libreoffice
@@ -138,6 +139,9 @@
 
     # Thunderbird Mail Client
     pkgs.thunderbird
+
+    # Video Player
+    pkgs.mpv
 
     # VPN
     pkgs.eduvpn-client
