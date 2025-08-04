@@ -82,6 +82,7 @@
 
     # Driver
     pkgs.amdvlk
+    pkgs.linuxKernel.packages.linux_zen.xpadneo
 
     # File Explorer
     pkgs.nautilus
