@@ -1,6 +1,6 @@
 { ... }:
 let
-  # import from git repository (alternatively I could've added nixos-wsl in the flake.nix
+  # import from git repository (alternatively) I could've added nixos-wsl in the flake.nix
   # but I did not want that input to be loaded for every host, so this seems like an adequate
   # change
   nixos-wsl = import (
