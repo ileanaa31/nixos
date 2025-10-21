@@ -58,9 +58,13 @@
     pkgs.arduino-ide
     pkgs.platformio
 
+    # Audio Control
+    pkgs.pwvucontrol
+
     # Backlight Control
     pkgs.brightnessctl
 
+    
     # Browser
     pkgs.firefox
 
@@ -76,6 +80,7 @@
     # Code
     pkgs.vscode
     pkgs.arduino-ide
+    pkgs.stack
     pkgs.pgadmin4-desktopmode
     pkgs.postgresql
     pkgs.drawio
@@ -115,6 +120,8 @@
     pkgs.obsidian
     pkgs.notepadqq
     pkgs.anki
+    pkgs.rnote
+    
 
     # Notification Daemon
     pkgs.dunst
