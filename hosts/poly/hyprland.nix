@@ -13,9 +13,8 @@
   services.greetd = {
     enable = true;
 
-    vt = 2;
     settings.default_session = {
-      command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --asterisks --cmd Hyprland";
+      command = "${pkgs.tuigreet}/bin/tuigreet --time --asterisks --cmd Hyprland";
     };
   };
 
@@ -40,23 +39,23 @@
     package = pkgs.jdk8;
   };
 
-  services.udev.packages = [
-    #Arduino IDE
-    pkgs.arduino
-
-    #PlatformIO
-    pkgs.platformio-core
-    pkgs.openocd
-  ];
+  # services.udev.packages = [
+  #   #Arduino IDE
+  #   pkgs.arduino
+  #
+  #   #PlatformIO
+  #   pkgs.platformio-core
+  #   pkgs.openocd
+  # ];
 
   environment.systemPackages = [
 
     # 3D-Printing
-    pkgs.prusa-slicer
+    # pkgs.prusa-slicer
 
     # Arduino
-    pkgs.arduino-ide
-    pkgs.platformio
+    # pkgs.arduino-ide
+    # pkgs.platformio
 
     # Audio Control
     pkgs.pwvucontrol
@@ -69,22 +68,20 @@
 
     # Chat
     pkgs.discord
-    pkgs.kdePackages.xwaylandvideobridge # to make screen shares be less of a pain in the ass
     pkgs.signal-desktop
-    pkgs.element-desktop
+    # pkgs.element-desktop
 
     # Clipboard
     pkgs.wl-clipboard
 
     # Code
     pkgs.vscode
-    pkgs.arduino-ide
-    pkgs.pgadmin4-desktopmode
-    pkgs.postgresql
-    pkgs.drawio
+    # pkgs.arduino-ide
+    # pkgs.pgadmin4-desktopmode
+    # pkgs.postgresql
+    # pkgs.drawio
 
     # Driver
-    pkgs.amdvlk
     pkgs.linuxKernel.packages.linux_zen.xpadneo
 
     # File Explorer
@@ -99,13 +96,13 @@
 
     # Image Editor
     pkgs.gimp
-    pkgs.gthumb
+    # pkgs.gthumb
 
     # LibreOffice
     pkgs.libreoffice
 
     # Math
-    pkgs.geogebra
+    # pkgs.geogebra
 
     # Music
     pkgs.spotify
@@ -115,25 +112,25 @@
     pkgs.networkmanagerapplet
 
     # Nextcloud
-    pkgs.nextcloud-client
+    # pkgs.nextcloud-client
 
     # Note Taking
     pkgs.obsidian
-    pkgs.notepadqq
+    # pkgs.notepadqq
     pkgs.anki
-    pkgs.rnote
+    # pkgs.rnote
 
     # Notification Daemon
     pkgs.dunst
     pkgs.libnotify
 
     # PDF
-    pkgs.zathura
+    # pkgs.zathura
 
     # Pretty Proto
     pkgs.texliveFull
     pkgs.pandoc
-    pkgs.jq
+    # pkgs.jq
 
     # Screen
     pkgs.hyprsunset
@@ -149,7 +146,7 @@
     pkgs.thunderbird
 
     # Video Player
-    pkgs.mpv
+    # pkgs.mpv
 
     # VPN
     pkgs.eduvpn-client

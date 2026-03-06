@@ -44,11 +44,12 @@
     git
     neofetch
     home-manager
+    javaPackages.compiler.openjdk8
   ];
 
   # Additional fonts
   fonts.packages = with pkgs; [
-    ubuntu_font_family
+    ubuntu-classic
     nerd-fonts.fira-code
     nerd-fonts._0xproto
     nerd-fonts.droid-sans-mono
