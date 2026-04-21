@@ -94,6 +94,9 @@
     pkgs.adwaita-icon-theme
     pkgs.gnome-disk-utility
 
+    # Graphic
+    pkgs.inkscape
+
     # Image Editor
     pkgs.gimp
     # pkgs.gthumb
@@ -150,5 +153,9 @@
 
     # VPN
     pkgs.eduvpn-client
+
+    # Software Projekt
+    pkgs.nodejs
+    
   ];
 }
