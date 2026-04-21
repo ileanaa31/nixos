@@ -150,6 +150,7 @@
 
     # Video Player
     # pkgs.mpv
+    # pkgs.vlc
 
     # VPN
     pkgs.eduvpn-client
