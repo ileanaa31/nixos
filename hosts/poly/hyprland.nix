@@ -69,7 +69,8 @@
     # Chat
     pkgs.discord
     pkgs.signal-desktop
-    # pkgs.element-desktop
+    pkgs.element-desktop
+    pkgs.threema-desktop
 
     # Clipboard
     pkgs.wl-clipboard
@@ -150,7 +151,7 @@
 
     # Video Player
     # pkgs.mpv
-    # pkgs.vlc
+    pkgs.vlc
 
     # VPN
     pkgs.eduvpn-client
