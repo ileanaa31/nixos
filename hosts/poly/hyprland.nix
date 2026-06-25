@@ -75,10 +75,14 @@
     # Clipboard
     pkgs.wl-clipboard
 
+    # Cloud
+    pkgs.nextcloud-client
+
     # Code
     pkgs.vscode
     # pkgs.arduino-ide
     # pkgs.pgadmin4-desktopmode
+    # pkgs.pgadmin4
     # pkgs.postgresql
     # pkgs.drawio
 
@@ -153,11 +157,14 @@
     # pkgs.mpv
     pkgs.vlc
 
+    # Image Viewer
+    pkgs.gthumb
+
     # VPN
     pkgs.eduvpn-client
 
     # Software Projekt
     pkgs.nodejs
-    
+
   ];
 }
