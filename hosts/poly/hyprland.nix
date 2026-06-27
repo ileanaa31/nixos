@@ -72,6 +72,8 @@
     pkgs.element-desktop
     pkgs.threema-desktop
 
+    # pkgs.zoom-us
+
     # Clipboard
     pkgs.wl-clipboard
 
